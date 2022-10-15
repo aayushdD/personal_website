@@ -56,11 +56,12 @@
 
 .content::after {
   content: "";
-  background-image: url("../img/11.svg");
+  background-color: green;
+  
   position: absolute;
   width: 100%;
   height: inherit;
-  opacity: 0.15;
+  opacity: 0.1;
   border-radius: 12px;
 }
 
@@ -71,6 +72,8 @@
   justify-content: center;
   padding: 49px;
   z-index: 1;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .content-right {
@@ -80,7 +83,7 @@
 }
 
 .content-right img {
-  height: 355px;
+  height: 300px;
   border: 2px solid black;
   border-radius: 200px;
 }
@@ -137,3 +140,12 @@
 .footer a {
   color: white;
 }
+
+
+
+.m-auto{
+  text-align: justify;
+  text-justify: inter-word;
+
+}
+
