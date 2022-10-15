@@ -57,7 +57,6 @@
 .content::after {
   content: "";
   background-color: green;
-  
   position: absolute;
   width: 100%;
   height: inherit;
