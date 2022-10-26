@@ -18,15 +18,17 @@
 
 .nav-left span {
   font-size: 35px;
-  padding-top: 10px;
+  padding-top: 11px;
 }
+
 
 .nav-left ul {
   display: flex;
   align-items: center;
   margin: 0 77px;
-  font-size: 22px;
-  padding-bottom: 23px;
+  font-size: 20px;
+  padding-bottom: 21px;
+  padding-top: 20px;
 }
 
 .nav-left ul li {
