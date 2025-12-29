@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Drone Customization for Autonomous Seed Bombarding</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal</h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+    <div class="video-grid">
+        <!-- Video 1 -->
+   <img src="img/hopper_assem.jpg" alt="article">
+
+        <!-- Video 2 -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/839WjVyNHCk?si=zQD-HyDF7zELOzw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <!-- Video 3 -->
+        <img src="img/assem_drone.png" alt="article">
+    </div>
+</div>
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+
+ <h1 class="font1">
+    Drone Customization for Autonomous Seed Bombarding
+</h1>
+
+<div class="blogpost-meta">
+    <div class="author-info">
+        <div><b>Mechanical Lead</b>: Aayush Dulal</div>
+        <div>Robotics Systems • Embedded Electronics • UAV Integration</div>
+    </div>
+</div>
+
+<p class="font1">
+    This project presents the design and deployment of a customized robotic aerial system for autonomous seed bombarding and ecological restoration. A DJI M300 drone was transformed into an integrated robotics platform by combining mechanical design, embedded electronics, wireless communication, and system level control. Multiple seed deployment mechanisms were evaluated, including compressed air, compressed CO₂ with pneumatic actuation, and motor driven roller based systems. Through iterative prototyping and payload constrained optimization, a high speed roller mechanism was selected, providing sufficient launch energy while remaining compatible with the drone’s payload and obstacle sensing limits.
+</p>
+
+<p class="font1">
+    The electronics architecture was designed as a distributed embedded system. A microcontroller based control unit manages motor actuation, timing, and safety interlocks, while high speed brushless motors are driven through electronic speed controllers. Power distribution was carefully designed to isolate high current actuation from control electronics, ensuring stable operation during flight.
+    A custom long range wireless communication interface based on LoRa enables reliable bidirectional control and telemetry over distances exceeding 10 km. This decouples the seed deployment subsystem from the drone’s flight controller, reflecting a modular robotics design philosophy commonly used in complex robotic systems. All mechanical components were designed using CAD tools and fabricated through 3D printing, enabling rapid iteration and modular integration. Field testing demonstrated reliable seed deployment under real world disturbances, highlighting the system’s robustness and suitability for large scale environmental robotics applications.
+
+    This project was done in collaboration with the United Nations Development Program and was successfully deployed in afforestation of disaster struck regions in Khotang and Okhaldhunga (Nepal). The mechanical design allowed payload of 200 seeds which met the energy requirements to make this concept feasible. 
+
+</p>
+
+<div class="article-footer">
+    <p>
+        <strong>Key Skills Demonstrated</strong>:
+        Robotics Systems Integration,
+        Embedded Electronics,
+        Motor Control,
+        Long Range Wireless Communication,
+        UAV Payload Design
+    </p>
+</div>
+
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+<div class="footer">
+    <p>© aayushdulal.com.np</p>
+</div>
+
+</body>
+</html>

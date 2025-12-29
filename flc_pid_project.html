@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Comparative Study of Fuzzy Logic Control and PID Control for Robotic Manipulators</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Page-specific: center single video only */
+.video-grid.single-video {
+    grid-template-columns: 1fr;   /* collapse grid */
+    justify-items: center;        /* center content */
+}
+
+.video-grid.single-video video {
+    width: 50%; 
+    height: 110%                  /* control video width */
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal</h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+    <div class="video-grid single-video">
+        <!-- Video 1 -->
+<img src="img/sec_set_flc.png" alt="article">
+    </div>
+</div>
+
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+
+<h1 class="font1">
+    Comparative Study of Fuzzy Logic Control and PID Control for Robotic Manipulators
+</h1>
+
+<div class="blogpost-meta">
+    <div class="author-info">
+        <div>Aayush Dulal</div>
+        <div>Control Systems • Robotics • Nonlinear Control</div>
+    </div>
+</div>
+
+<p class="font1">
+    This work presents a detailed comparison between classical Proportional–Integral–Derivative (PID) control and Fuzzy Logic Control (FLC) for trajectory tracking of a three degree of freedom articulated robotic manipulator. The study is motivated by the limitations of PID controllers when applied to nonlinear robotic systems operating under uncertainty, noise, and varying dynamic conditions, despite their widespread industrial use and ease of implementation.
+</p>
+
+<p class="font1">
+    The robotic manipulator is modeled as a rigid body system using an Euler–Lagrange formulation, capturing nonlinear inertial coupling, Coriolis and centrifugal effects, and gravitational terms. These nonlinear dynamics motivate the exploration of control strategies that do not rely on precise mathematical models or exact parameter identification. Each joint of the manipulator is controlled independently to allow direct performance comparison between the two controllers.
+    The PID controller is designed and tuned using MATLAB autotuning tools to ensure optimal baseline performance. The controller uses joint position error as feedback and applies proportional, integral, and derivative actions to generate joint torque commands. While effective under nominal conditions, the PID controller shows sensitivity to nonlinearities, aggressive trajectories, and sensor noise, leading to oscillations and degraded tracking performance in challenging scenarios.
+</p>
+
+<p class="font1">
+    In contrast, the Fuzzy Logic Controller is implemented using a rule based inference system that incorporates human intuition into the control design. The FLC uses three input variables for each joint: joint position error, joint velocity, and joint acceleration. The inclusion of joint acceleration as an additional linguistic variable allows the controller to anticipate dynamic changes rather than reacting solely to error magnitude. Each input is described using carefully designed membership functions, and a comprehensive rule base maps these inputs to joint torque outputs.
+    Triangular and trapezoidal membership functions are employed to ensure smooth transitions between control regimes and to handle actuator saturation effects. The fuzzy inference process enables adaptive control behavior across a wide operating range without requiring explicit knowledge of the system dynamics. The computational complexity of the controller remains low despite the additional acceleration input, making it suitable for real time implementation.
+    Simulation and validation are carried out in both MATLAB Simulink and ROS. In MATLAB, the robotic system is modeled using Simscape Multibody, where the manipulator geometry and mass properties are imported directly from a SolidWorks CAD model. To further validate controller performance in a robotics oriented environment, the same SolidWorks model is converted into a URDF representation and simulated within ROS. This enables realistic joint level simulation, visualization, and future extensibility toward hardware deployment.
+</p>
+
+<p class="font1">
+    Multiple joint space trajectories are tested, including non conventional and dynamically demanding paths. To evaluate robustness, Gaussian noise is injected into the joint position sensor of the terminal joint, which is most susceptible to disturbances due to kinematic coupling. Performance is evaluated using Root Mean Square error to quantify tracking accuracy and Relative Standard Deviation to measure consistency under noise.
+    Across all trajectories and simulation environments, the Fuzzy Logic Controller consistently outperforms the PID controller. The FLC exhibits reduced tracking error, smoother control action, and significantly improved robustness to sensor noise and dynamic disturbances. The PID controller, while adequate for simple motions, struggles under aggressive trajectories and noisy measurements. The results demonstrate that FLC provides a more flexible and resilient control strategy for nonlinear robotic manipulators.
+    This study highlights the advantages of fuzzy logic based control in robotics applications where precise modeling is difficult or where robustness is critical. By combining CAD driven modeling, MATLAB based simulation, and ROS based validation using URDF models, the work demonstrates a complete control development pipeline suitable for both research and real world robotic systems.
+</p>
+
+<div class="article-footer">
+    <p>
+        <strong>Key Skills Demonstrated</strong>:
+        PID Control,
+        Fuzzy Logic Control,
+        Nonlinear Robotics,
+        MATLAB Simulink,
+        SolidWorks to URDF Conversion,
+        ROS Simulation,
+        Trajectory Tracking
+    </p>
+</div>
+
+
+
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+<div class="footer">
+    <p>© aayushdulal.com.np</p>
+</div>
+
+</body>
+</html>

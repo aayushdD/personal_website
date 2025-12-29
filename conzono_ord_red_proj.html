@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Exact Complexity Reduction of Constrained Zonotopes for Reachability and Control</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Page-specific: center single video only */
+.video-grid.single-video {
+    grid-template-columns: 1fr;   /* collapse grid */
+    justify-items: center;        /* center content */
+}
+
+.video-grid.single-video video {
+    width: 50%; 
+    height: 110%                  /* control video width */
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal</h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+    <div class="video-grid single-video">
+        <!-- Video 1 -->
+<img src="img/conzon_ord_red.png" alt="article">
+    </div>
+</div>
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+
+<h1 class="font1">
+    Exact Complexity Reduction of Constrained Zonotopes for Reachability and Control
+</h1>
+
+<div class="blogpost-meta">
+    <div class="author-info">
+        <div>Aayush Dulal</div>
+        <div>Set-Based Control • Reachability Analysis • Optimization</div>
+    </div>
+</div>
+
+<p class="font1">
+    This work studies exact complexity reduction of constrained zonotopes, a set representation widely used in reachability analysis, invariant set computation, and verification of constrained dynamical systems. While constrained zonotopes offer expressive and compact representations, their complexity grows rapidly under common set operations such as Minkowski sums, intersections, and Pontryagin differences. This paper addresses the problem of reducing this complexity without introducing approximation error, which is critical for safety-critical control and verification applications.
+</p>
+
+<p class="font1">
+    The paper identifies multiple sources of redundancy in constrained zonotopes and proposes three complementary algorithms to remove these redundancies exactly. The algorithms target redundant generators, redundant factors, and redundant equality constraints while preserving the exact geometry of the represented set.
+</p>
+
+<h2 class="font1">Algorithm Overview</h2>
+
+<p class="font1">
+    <strong>Algorithm 1</strong> performs redundancy detection using iterative bound refinement on the factor variables.  
+    <strong>Algorithm 2</strong> guarantees exactness by formulating redundancy checks as linear feasibility problems.  
+    While both methods are effective in specific regimes, they either sacrifice exactness or incur high computational cost.
+</p>
+
+<p class="font1">
+    The primary contribution of the paper is a <strong>hybrid complexity reduction algorithm</strong> that combines fast pre-refinement with selective feasibility checking, achieving exact reduction with significantly improved computational efficiency.
+</p>
+
+<h2 class="font1">
+    Proposed Algorithm: Hybrid Pre-Refinement and Feasibility-Based Reduction
+</h2>
+
+<p class="font1">
+    The proposed algorithm exploits structural properties of constrained zonotopes to eliminate obvious redundancies early, before invoking expensive optimization-based checks. By reordering the reduction process, the algorithm minimizes the number of feasibility problems that must be solved while still guaranteeing exactness of the resulting set representation.
+</p>
+
+<h3 class="font1">
+    Pseudocode
+</h3>
+
+<pre class="font1" style="background:#f7f9fb; padding:1rem; border-radius:8px; overflow-x:auto;">
+Input:
+    Constrained zonotope Z = { c + Gξ | Aξ = b,  ||ξ||∞ ≤ 1 }
+
+Output:
+    Reduced constrained zonotope Z_reduced with identical geometry
+
+Algorithm:
+    Initialize:
+        Active factor set F ← {1, 2, ..., p}
+        Constraint set C ← equality constraints Aξ = b
+
+    Step 1: Pre-refinement
+        For each factor ξ_i in F:
+            Compute conservative bounds [l_i, u_i] using equality constraints only
+            If [l_i, u_i] ⊂ (-1, 1):
+                Substitute ξ_i using Aξ = b
+                Remove ξ_i from F
+                Update generator matrix G and constraints C
+
+    Step 2: Feasibility-based verification
+        For each remaining factor ξ_j in F:
+            Solve feasibility problem:
+                maximize ξ_j subject to Aξ = b, ||ξ||∞ ≤ 1
+            If infeasible or max ξ_j < 1:
+                Mark ξ_j as redundant
+                Substitute ξ_j and update G, C
+
+    Step 3: Final consistency check
+        Remove zero generators and dependent constraints
+        Re-index remaining factors
+
+Return:
+    Z_reduced = { c + G_reduced ξ | A_reduced ξ = b_reduced, ||ξ||∞ ≤ 1 }
+</pre>
+
+<p class="font1">
+    Numerical evaluations demonstrate that the proposed hybrid algorithm consistently achieves the lowest-order exact representations while significantly reducing computation time compared to existing approaches. In applications such as neural network reachability, maximal invariant set computation, and robust model predictive control, the algorithm enables exact set propagation at scales that were previously computationally prohibitive.
+</p>
+
+<p class="font1">
+    By enabling fast and exact complexity reduction, this work makes constrained zonotopes practical for large-scale control, verification, and optimization problems. The proposed algorithm directly supports modern applications involving hybrid systems, neural networks, and safety-critical autonomous systems.
+</p>
+
+<div class="article-footer">
+    <p>
+        <strong>Key Skills Demonstrated</strong>:
+        Constrained Zonotopes,
+        Exact Set Reduction,
+        Reachability Analysis,
+        Linear Programming,
+        Optimization for Control,
+        Neural Network Verification
+    </p>
+</div>
+
+
+
+
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+</body>
+</html>

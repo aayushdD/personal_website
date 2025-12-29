@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Real-Time Binary Classification Using Classical Vision and Deep Learning</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Page-specific: center single video only */
+.video-grid.single-video {
+    grid-template-columns: 1fr;   /* collapse grid */
+    justify-items: center;        /* center content */
+}
+
+.video-grid.single-video video {
+    width: 50%; 
+    height: 110%                  /* control video width */
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal</h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+    <div class="video-grid single-video">
+
+
+        <!-- Video 1 -->
+        <video autoplay loop muted playsinline>
+            <source src="img/binary_classify.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+
+    <h1 class="font1">
+    Real-Time Binary Classification Using Classical Vision and Deep Learning
+</h1>
+
+<div class="blogpost-meta">
+    <div class="author-info">
+        <div>Aayush Dulal</div>
+        <div>Computer Vision • Deep Learning • Real-Time Systems</div>
+    </div>
+</div>
+
+<p class="font1">
+    This project implements a real-time binary face classification pipeline by combining classical computer vision techniques with modern deep learning models. The goal is to detect human faces from live video streams and classify them into two categories—male or female—under real-world conditions such as varying lighting, pose, and background clutter.
+</p>
+
+<p class="font1">
+    Face detection is performed using OpenCV’s Haar Cascade classifier, a lightweight and fast method based on handcrafted features and boosted classifiers. Haar cascades enable efficient face localization on CPU-only systems, making them well suited for real-time applications where computational resources are limited. Detected face regions are cropped, normalized, and passed to a neural network for classification.
+    For gender classification, a convolutional neural network is trained on labeled face images. The CNN learns discriminative spatial features such as facial structure, texture, and local appearance patterns that are difficult to capture with rule-based methods. The model outputs a binary prediction indicating the most likely gender class for each detected face.
+</p>
+
+<p class="font1">
+    The system is designed as a modular perception pipeline, where classical vision handles fast region proposal while deep learning focuses on semantic understanding. This separation improves efficiency, interpretability, and robustness compared to an end-to-end deep model operating directly on full images.
+    The final system operates in real time on live camera feeds, demonstrating stable face tracking and classification with minimal latency. This project highlights the practical value of hybrid vision systems that combine traditional algorithms with learning-based models for deployment-ready computer vision applications. The CNN model is a ResNet-18 based fine tuned model.  
+</p>
+
+<div class="article-footer">
+    <p>
+        <strong>Key Skills Demonstrated</strong>:
+        OpenCV,
+        Haar Cascade Detection,
+        Convolutional Neural Networks,
+        Real-Time Computer Vision,
+        Model Deployment
+    </p>
+</div>
+
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+<div class="footer">
+    <p>© aayushdulal.com.np</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>MPC Based Drone Path Optimization and Obstacle Avoidance</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal</h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+    <div class="video-grid">
+        <!-- Video 1 -->
+   <img src="img/lakes_cop.png" alt="article">
+
+        <!-- Video 3 -->
+        <img src="img/mpc_2d_traj.png" alt="article">
+        <img src="img/mpc_3d_traj.png" alt="article">
+    </div>
+</div>
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+
+ <h1 class="font1">
+    MPC Based Drone Path Optimization and Obstacle Avoidance
+</h1>
+
+<div class="blogpost-meta">
+    <div class="author-info">
+        <div>Aayush Dulal</div>
+        <div>Optimization • Nonlinear MPC • Constrained Trajectory Planning</div>
+    </div>
+</div>
+
+<p class="font1">
+    This project formulates drone navigation as a constrained optimization problem solved online using Nonlinear Model Predictive Control. At each control step, the controller solves a finite horizon nonlinear program to compute an optimal sequence of acceleration and yaw rate commands that move the drone toward a target while respecting nonlinear dynamics, actuator limits, energy usage, and obstacle avoidance constraints. The optimization is solved using MATLAB FMINCON with an SQP method, enabling direct handling of nonlinear constraints without linearizing the model.
+</p>
+
+<p class="font1">
+    The state includes planar position, velocity, heading, and an energy variable that decreases with the squared control effort, which allows the optimizer to explicitly trade off fast arrival versus energy efficient motion. The objective uses quadratic tracking penalties over the horizon plus a terminal cost, with additional weighting to prevent overshoot near the goal and to encourage physically realistic deceleration as the drone approaches the target. 
+</p>
+
+<p class="font1">
+    Obstacle avoidance is enforced through nonlinear inequality constraints using circular no fly zones derived from a real neighborhood map. Each building footprint is conservatively approximated as a circle, which keeps the constraints smooth for SQP while still being safety oriented. A buffer term inflates obstacle radii to maintain clearance margins in dense urban like layouts. Because the environment contains more than fifty obstacles, the optimization must satisfy thousands of inequality constraints at each step. 
+</p>
+
+<p class="font1">
+    The MPC loop is implemented modularly in MATLAB, with separate dynamics, cost, and constraint functions. To improve convergence and reduce computation time, the previous optimal control sequence is shifted forward and used as the next initial guess. Collision checking is also performed with sub stepping between horizon nodes to prevent the optimizer from numerically slipping through obstacles between discrete prediction points.
+</p>
+
+<p class="font1">
+    Results show the controller generates smooth, collision free trajectories through highly constrained corridors and adapts speed and heading based on obstacle density. Solve time stays within a practical range for most steps, with peaks occurring in the densest regions where the solver must satisfy many competing constraints. The same formulation was also extended to a preliminary 3D scenario using cylindrical no fly zones, demonstrating scalability toward full 3D planning and future real time NMPC improvements. The horizon of N=15 was used for this project and the robustness was defined by using the buffer regions. Instead of using buffer regions, tube-MPC can also be used for a robust performance.
+</p>
+
+<div class="article-footer">
+    <p>
+        <strong>Optimization Highlights</strong>:
+        Nonlinear MPC,
+        FMINCON SQP,
+        Terminal Cost Design,
+        Nonlinear Inequality Constraints,
+        Energy Aware Planning,
+        Real Map Based Obstacle Modeling
+    </p>
+</div>
+
+
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+<div class="footer">
+    <p>© aayushdulal.com.np</p>
+</div>
+
+</body>
+</html>

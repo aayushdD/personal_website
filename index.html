@@ -5,157 +5,229 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <title>Control Systems & AI</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+    <title>Portfolio | Aayush </title>
 </head>
 
 <body>
     <nav class="navigation max-width-1 m-auto">
-        <div class="nav-left">
-            <a href="/">
-                <span><img src="img/face.png" width="94px" alt=""></span>
-            </a>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href='experience.html'>Experiences</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-                <li><a href="/projects.html">Projects</a></li>
-                <li><a href="/about.html">About</a></li>
-            </ul>
+        <!-- Replace the existing nav-left div with this updated version -->
+<!-- Updated nav-left section with proper structure -->
+<div class="nav-left">
+    <a href="/" class="nav-profile">
+        <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+        <div class="nav-name-container">
+            <div class="nav-name">
+                <h2>Aayush Dulal</h2>
+            </div>
+            <div class="nav-tagline">
+                <span>I am into</span>
+                <div class="rotating-text-container">
+                    <div class="rotating-text">
+                        <span class="active">Control Systems</span>
+                        <span>Robotics</span>
+                        <span>Artificial Intelligence</span>
+                        <span>Automation</span>
+                        <span>Optimization</span>
+                        <span>Set-based Controls</span>
+                        <span>MPC</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="nav-right">
-            <form action="/search.html" method="get">
-                <input class="form-input" type="text" name="query" placeholder="Article Search">
-                <button class="btn">Go</button>
-            </form>
+    </a>
+</div>
 
-        </div>
+<div class="nav-right">
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#experience">Experiences</a></li>
+        <li><a href="index.html#featured-projects">Projects</a></li>
+
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#articles">Articles</a></li>
+    </ul>
+</div>
+
 
     </nav>
     <div class="max-width-1 m-auto">
         <hr>
     </div>
-    <div class="m-auto content max-width-1 my-2">
-        <div class="content-left">
-            <h1>Control Systems and Artificial Intelligence</h1>
-            <p>This blog's purpose is education and knoweledge sharing.
-            Control systems are everywhere. Human body is the greatest control system to ever exist. Our vision sensors feed the vision data to our brain and our brain (The controller tuned by nature and experience) generates the required response for every part of our body. I am very passionate about control systems and Artificial Intelligence. Topic suggestions are welcome. Go to <b><i>About</i></b> page for personal information and <b><i>Experiences</i></b> page for Research and professional experiences. Here is my <a href="/Academic_CV_Aayush_Dulal.pdf" target="_blank"><B>CV</B></a>. I always try to be involved in some kind of projects. I have done several minor projects but some of the projects which I enjoyed and are very interesting can be found in <b><i>Projects.</i></b> 
-            <br>
-            <br>
-        </p>
-            <p style="color:red;">
-            <B>RESEARCH INTERESTS</B>
-            	<ul>
-            		<li>Linear and Non-Linear Control, Fuzzy Logic.</li>
-            		<li>Machine Learning, Artificial Intelligence, Computer Vision.</li>
-            		<li>Dynamic Systems and Optimization.</li>
-            		<li>Robotics and Autonomous systems.</li></ul>
-            	</p>
+<div class="about-grid max-width-1 m-auto my-2">
+
+    <!-- LEFT COLUMN -->
+    <div class="about-left">
+
+        <!-- ABOUT -->
+        <div class="about-text-panel">
+            <div class="about-header">
+                <h1 class="section-title">About me</h1>
+                <div class="about-icons">
+                    <a href="mailto:aayushdulal90@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/ayusss_dulal/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/aayush-dulal/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/aayushdD" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <p>
+                I am a results driven mechanical engineer with a strong experience in control systems, robotics, and intelligent automation. I enjoy solving complex, real world engineering problems and turning theoretical ideas into practical, deployable solutions. My background spans programming, mechanical design, and machine learning, enabling me to work effectively across hardware and software boundaries. Before graduate school, I gained hands on experience building robotic and autonomous systems, which strengthened my ability to design, prototype, and iterate quickly. I am currently pursuing a Ph.D. in mechanical engineering, where my work focuses on improving the computational efficiency of advanced control methods. My research includes reducing the complexity of constrained zonotopes for fast reachable set computation (<a href="https://github.com/ESCL-at-UTD/zonoLAB"><b>ZonoLab</b></a>) and exactly representing model predictive control laws using ReLU neural networks.
+            </p>
         </div>
-        <div class="content-right">
-            <img src="img/AI.png">
+
+        <!-- SKILLS -->
+        <div class="skills-text-panel" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <ul>
+                <li><b>Programming:</b> C++, Python, MATLAB, Simulink, PyTorch, TensorFlow, Git</li>
+                <li><b>Robotics:</b> ROS, ROS2 Control, Gazebo, Isaac Lab, MuJoCo, MoveIt, OpenCV</li>
+                <li><b>Optimization:</b> Gurobi, Mosek, CPLEX</li>
+                <li><b>Prototyping:</b> SolidWorks, Ansys, PrusaSlicer, Inkscape</li>
+            </ul>
         </div>
+
     </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="about-right">
+
+        <!-- IMAGE -->
+        <div class="about-image">
+            <img src="img/skills.png" alt="Robot hand">
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="education-text-panel">
+            <h2 class="section-title">Education</h2>
+
+            <p>
+                <b>Ph.D. in Mechanical Engineering</b><br>
+                The University of Texas at Dallas<br>
+                <span class="edu-dates">2024 – Present</span>
+            </p>
+
+            <p>
+                <b>M.S. in Mechanical Engineering</b><br>
+                Northern Arizona University<br>
+                <span class="edu-dates">2023 – 2024</span>
+            </p>
+
+            <p>
+                <b>B.E. in Mechanical Engineering</b><br>
+                Tribhuvan University<br>
+                <span class="edu-dates">2017 – 2022</span>
+            </p>
+        </div>
+
+    </div>
+
+</div>
 
     <div class="max-width-1 m-auto">
         <hr>
     </div>
-    <div class="home-articles max-width-1 m-auto font2">
-        <h2>Featured Articles</h2>
+    <section id="featured-projects" class="home-articles max-width-1 m-auto font2">
+        
+
+        <h2 h1 class="section-title font1"> Featured Projects</h2>
         <div class="year-box adjust-year">
            
       
         </div>
         <div class="home-article">
             <div class="home-article-img">
-                <img src="img/pid.png" alt="article">
+                <img src="img/so101_gz.jpg" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost.html">
-                    <h3>Proportional Integrative Derivative Control</h3>
+                <a href="RL_IL_project.html">
+                    <h3>Reinforcement Learning with Sim to Imitation Transfer</h3>
                 </a>
-
-                <div>Aayush Dulal</div>
-                <span>01 June | 6 min read</span>
+                <div>Python | ROS2 | GAZEBO</div>
             </div>
         </div>
         <div class="home-article">
             <div class="home-article-img">
-                <img src="img/Norm_dis.png" alt="article">
+                <img src="img/assem_drone2.jpg" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost_two.html">
-                    <h3>Fuzzy Logic</h3>
+                <a href="seed_bomb_project.html">
+                    <h3> Seed Bombing Drone Development</h3>
+                    
                 </a>
 
-                <div>Author Name</div>
-                <span>05 june | 4 min read</span>
+                <div>Python, MATLAB, Arduino, C</div>
             </div>
         </div>
         <div class="home-article">
             <div class="home-article-img">
-                <img src="img/spacex.jpg" alt="article">
+                <img src="img/MPC_img.png" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost_state_obs.html">
-                    <h3>The state observervation</h3>
+                <a href="online_mpc_project.html">
+                    <h3>Online Model Predictive Control for 3D Trajectory Tracking</h3>
+                    
                 </a>
 
-                <div>Aayush dulal</div>
-                <span>15 June | 4 min read</span>
+                <div>MATLAB</div>
             </div>
         </div>
         <div class="home-article">
             <div class="home-article-img">
-                <img src="img/pdf.png" alt="article">
+                <img src="img/bin_class_pic.png" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost_k_filter.html">
-                    <h3>Kalman Filter Basics</h3>
+                <a href="binary_class_project.html">
+                    <h3>Binary Classification</h3>
+                    
                 </a>
 
-                <div>Aayush Dulal</div>
-                <span>05 June | 6 min read</span>
+                <div>Python, Tensorflow, Keras, openCV</div>
             </div>
         </div>
         <div class="home-article">
             <div class="home-article-img">
-                <img src="img/math_state_obs.jpg" alt="article">
+                <img src="img/block_model.png" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost_state_obs_math.html">
-                    <h3>State Observer Mathematically</h3>
+                <a href="flc_pid_project.html">
+                    <h3>Fuzzy Logic Controller for 3D Trajectory Tracking </h3> 
+                    
                 </a>
 
-                <div>Aayush Dulal</div>
-                <span>20 June | 4 min read</span>
+                <div>MATLAB, ROS, Python, Simulink</div>
+
             </div>
         </div>
         <div class="home-article">
             <div class="home-article-img">
-                <img src="img/ml_basic.jpg" alt="article">
+                <img src="img/visualdisplay.png" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost_ml_basic.html">
-                    <h3> Machine learning Basics</h3>
+                <a href="ews_project.html">
+                    <h3>Flood Early Warning Detection System</h3>
+                                       
                 </a>
-
-                <div>Aayush Dulal</div>
-                <span>21 june | 3 min read</span>
+                <div>Python, C</div>
             </div>
         </div>
         <div class="home-article">
             <div class="home-article-img">
-                <img src="img/open_sys.jpg" alt="article">
+                <img src="img/conzono_red_pic.png" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost_intro_control.html">
-                    <h3>Intro to Control Systems</h3>
+                <a href="conzono_ord_red_proj.html">
+                    <h3> Exact Representation Complexity Reduction for Constrained Zonotopes</h3>
+                                     
                 </a>
 
-                <div>Aayush Dulal</div>
-                <span>22 June | 3 min read</span>
+                <div>MATLAB, Gurobi, Mosek</div>
             </div>
         </div>
         <div class="home-article">
@@ -163,21 +235,182 @@
                 <img src="img/total_lti_flow.jpg" alt="article">
             </div>
             <div class="home-article-content font1">
-                <a href="/blogpost_lti_sys.html">
-                    <h3> Linear and Time Invariant System</h3>
-                </a>
+                    <h3>Optimal EV Charging Station Placement in Kathmandu Valley</h3> 
 
-                <div>Aayush Dulal</div>
-                <span>23 June | 3 min read</span>
+                <div>CPLEX</div>
             </div>
         </div>
+    </section>
+
+<section id="experience" class="experience-section max-width-1 m-auto my-2">
+
+  <h2 class="section-title">Experiences</h2>
+
+  <div class="experience-item-box">
+
+        <h4>Ph.D. Researcher — Mechanical Engineering (2024 – Present)</h4>
+    <div class="experience-content">
+      <p>
+        My doctoral work focuses on improving the computational efficiency and scalability of advanced control methods for real time deployment in robotics and autonomous systems. I develop exact training free representations of explicit Model Predictive Control laws using ReLU neural networks for fast online evaluation while preserving theoretical guarantees, and design algorithms for exact complexity reduction of constrained zonotopes used in reachability analysis, invariant set computation, and verification, validated on robust controllable sets and neural network induced partitions.
+      </p>
+    </div>
+  </div>
+
+  <div class="experience-item-box">
+        <h4>Graduate Research Assistant — The University of Texas at Dallas (Aug 2024 – Present)</h4>
+
+
+    <div class="experience-content">
+      <p>
+        I support research and development activities in control systems and robotics by contributing to mathematical modeling, algorithm design, simulation, and validation, including the implementation of optimization based controllers, performance analysis of closed loop systems, and preparation of research artifacts for publication and dissemination.
+      </p>
+    </div>
+  </div>
+
+  <div class="experience-item-box">
+   
+        <h4>Graduate Research Assistant — Northern Arizona University (Jan 2024 – May 2024)</h4>
+
+
+    <div class="experience-content">
+      <p>
+        I conducted research on bi fidelity transfer learning for Bayesian Neural Networks applied to vehicle suspension modeling, implementing and evaluating learning strategies that leverage low and high fidelity datasets to improve uncertainty aware modeling performance and robustness in data scarce regimes.
+      </p>
+    </div>
+  </div>
+
+  <div class="experience-item-box">
+        <h4>Research and Development Engineer — Robotics Association of Nepal (Feb 2023 – Dec 2023)</h4>
+
+    <div class="experience-content">
+      <p>
+        I led mechanical and embedded systems development for a seed bombing drone based on the DJI Matrice 300 platform by designing and fabricating custom payload and release mechanisms for controlled deployment, implementing low level control logic on STM32 microcontrollers with integrated motor control and safety interlocks, and serving as the machine learning lead for an AI based flood early warning system deployed along the Kamala River using real time hydrological data, IoT sensor networks, and long range LoRa communication.
+      </p>
+    </div>
+  </div>
+
+  <div class="experience-item-box">
+
+        <h4>Undergraduate Researcher — Robotics and Control, Tribhuvan University (2021 – 2023)</h4>
+    <div class="experience-content">
+      <p>
+        I designed and simulated a Fuzzy Logic Controller for a three degree of freedom robotic manipulator by incorporating joint acceleration as an additional input to improve tracking accuracy and robustness, validating the controller in MATLAB Simulink and ROS using a URDF model converted from SolidWorks with comparisons against classical PID control under sensor noise and aggressive trajectories, and additionally formulated and solved a mixed integer linear programming problem for optimal electric vehicle charging station placement in Kathmandu Valley using the CPLEX Python API.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section id="articles" class="blog-section max-width-1 m-auto my-2">
+
+    <h2 class="section-title">Technical Pieces</h2>
+
+    <div class="blog-list">
+
+        <a href="/blogpost_state_obs.html" class="blog-item">
+            Exact Representation of MPC Laws using ReLU Networks
+        </a>
+
+        <a href="/blogpost_intro_control.html" class="blog-item">
+            Complexity Reduction of Constrained Zonotopes
+        </a>
+
+        <a href="/blogpost_lti_sys.html" class="blog-item">
+            Optimal EV Charging Station Placement using MILP
+        </a>
+
+        <a href="/blogpost_k_filter.html" class="blog-item">
+            Binary Classification and Filtering Techniques
+        </a>
+
+        <a href="/blogpost_state_obs_math.html" class="blog-item">
+            State Observers for Nonlinear Systems
+        </a>
 
     </div>
 
-    <div class="footer">
-        <p>Copyright &copy; aayushdulal.com.np </p>
-        <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a>
+</section>
+
+
+<section id="contact" class="contact-section max-width-1 m-auto my-2">
+    <div class="contact-panel">
+        <h2 class="section-title">Contact</h2>
+
+        <p>
+            <i class="fas fa-map-marker-alt"></i>
+            Dallas, Tx, USA
+        </p>
+
+        <p>
+            <i class="fas fa-phone"></i>
+            +1 (928) 266-7623
+        </p>
+
+        <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:aayushdulal90@gmail.com">aayushdulal90@gmail.com</a>
+        </p>
     </div>
+</section>
+
+
+
+
+    <script>
+// Dynamic rotating text functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const rotatingText = document.querySelector('.rotating-text');
+    const textItems = rotatingText.querySelectorAll('span');
+    let currentIndex = 0;
+    
+    // Function to rotate through text items
+    function rotateText() {
+        // Get current and next indices
+        const nextIndex = (currentIndex + 1) % textItems.length;
+        
+        // Add exiting class to current item
+        textItems[currentIndex].classList.remove('active');
+        textItems[currentIndex].classList.add('exiting');
+        
+        // Remove exiting class after animation completes
+        setTimeout(() => {
+            textItems[currentIndex].classList.remove('exiting');
+            currentIndex = nextIndex;
+            textItems[currentIndex].classList.add('active');
+        }, 500); // Match this with CSS transition duration
+    }
+    
+    // Start rotation (every 3 seconds)
+    let rotationInterval = setInterval(rotateText, 3000);
+    
+    // Pause rotation on hover
+    rotatingText.addEventListener('mouseenter', () => {
+        clearInterval(rotationInterval);
+    });
+    
+    // Resume rotation when mouse leaves
+    rotatingText.addEventListener('mouseleave', () => {
+        rotationInterval = setInterval(rotateText, 3000);
+    });
+    
+    // Initial setup - ensure only first item is active
+    textItems.forEach((item, index) => {
+        if (index !== 0) {
+            item.classList.remove('active');
+        }
+    });
+});
+</script>
+<script>
+document.querySelectorAll(".experience-header").forEach(button => {
+    button.addEventListener("click", () => {
+        const box = button.parentElement;
+        box.classList.toggle("active");
+    });
+});
+</script>
+
+
 </body>
 
 </html>

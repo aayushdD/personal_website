@@ -1,0 +1,1345 @@
+/* =========================
+   Color Palette
+========================= */
+:root {
+    /* Backgrounds */
+    --bg-main: #d6e2e9;
+    --bg-accent: #d6e2e9;
+    --bg-card: #dde7ee
+;
+    --bg-hover: #eceff3;
+
+    /* Text */
+    --text-primary: #1f2933;
+    --text-secondary: #000000;
+    --text-muted: #8b949e;
+
+    /* Headings + Nav */
+    --heading: #463f3a;
+    --nav-text: #463f3a;
+
+    /* Accent */
+    --accent: #e63946;
+    --accent-hover: #2f4a85;
+
+    /* Borders */
+    --border: #dde1e6;
+}
+
+/* =========================
+   Global Reset
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+/* =========================
+   Utility
+========================= */
+.max-width-1 {
+    max-width: 1300px;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.my-2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* =========================
+   Navigation
+========================= */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    background: var(--bg-main);
+    z-index: 10;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-left ul {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+.nav-left ul li a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-left ul li a:hover {
+    color: var(--accent);
+}
+
+.nav-right input {
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.nav-right .btn {
+    padding: 0.15rem 0.7rem;
+    background: var(--accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nav-right .btn:hover {
+    background: var(--accent-hover);
+}
+.nav-right {
+    margin-left: auto;
+    margin-right: 3rem; /* 👈 move search left */
+}
+
+
+/* =========================
+   Hero Section
+========================= */
+
+
+.content-left h1 {
+    font-size: 2.2rem;
+    color: var(--heading);
+}
+
+.content-left h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 0.4rem;
+}
+
+.content-left p {
+    text-align: justify;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.content-left ul {
+    margin-left: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.content-left li {
+    margin-bottom: 0.4rem;
+}
+
+.content-left b {
+    color: var(--heading);
+}
+
+
+
+
+/* =========================
+   About Header + Icons
+========================= */
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.about-icons {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.about-icons a {
+    color: var(--nav-text);
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.about-icons a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   Articles
+========================= */
+
+.home-articles {
+    background-color: var(--bg-accent);
+    padding: 3rem 2rem;
+    border-radius: 18px;
+    margin-top: 3rem;
+}
+
+
+.home-articles h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 0.4rem;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.home-article {
+    display: grid;
+    grid-template-columns: 160px auto;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.home-article:hover {
+    background: var(--bg-hover);
+    transform: translateY(-2px);
+}
+
+.home-article-img img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.home-article-content h3 {
+    margin-bottom: 0.4rem;
+    color: var(--heading);
+}
+
+.home-article-content a {
+    text-decoration: none;
+}
+
+.home-article-content span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+    margin-top: 4rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* =========================
+   Divider
+========================= */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+}
+/* =========================
+   Skills Section
+========================= */
+.skills-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.skills-text h2 {
+    color: var(--heading);
+    margin-bottom: 0.6rem;
+}
+
+.skills-text ul {
+    margin-left: 1.2rem;
+}
+
+.skills-text li {
+    margin-bottom: 0.4rem;
+    color: #000;
+}
+
+.skills-image img {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+}
+
+/* =========================
+   Skills + Images Layout
+========================= */
+.skills-with-images {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.skills-text h2 {
+    color: var(--heading);
+    margin-bottom: 0.6rem;
+}
+
+.skills-text ul {
+    margin-left: 1.2rem;
+}
+
+.skills-text li {
+    margin-bottom: 0.4rem;
+    color: #000;
+}
+
+/* Right side images */
+.skills-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.skills-images img {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 1px;
+    display: block;
+}
+
+/* =========================
+   Skills Grid (Aligned with About)
+========================= */
+.skills-grid {
+    display: block;
+    margin-top: 1.8rem;
+}
+
+
+/* Left side text */
+.skills-text h2 {
+    color: var(--heading);
+    margin-bottom: 0.6rem;
+}
+
+.skills-text ul {
+    margin-left: 1.2rem;
+}
+
+.skills-text li {
+    margin-bottom: 0.4rem;
+    color: #000;
+}
+
+/* Right side venn */
+.skills-visual {
+    display: flex;
+    justify-content: flex-end; /* THIS is what aligns to the right edge */
+}
+
+.skills-visual img {
+    width: 100%;
+    max-width: 100px;
+    display: block;
+    margin-top: 60px;
+}
+/* =========================
+   Nav Profile
+========================= */
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+}
+
+.nav-profile img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--heading);
+    white-space: nowrap;
+}
+.nav-left {
+    gap: 10.5rem;
+}
+/* =========================
+   Navigation Alignment
+========================= */
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    margin-left: auto; /* 👈 pushes ribbon to the right margin */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--nav-text);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+/* Dynamic rotating text styles */
+.rotating-text-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    color: #e63946;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.rotating-text {
+    display: inline-block;
+    min-width: 120px;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rotating-text span {
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rotating-text span.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotating-text span.exiting {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+/* Adjust nav-left for the new content */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================
+   Nav Profile - UPDATED with larger picture
+========================= */
+/* =========================
+   Nav Profile - UPDATED with larger picture, NO BORDER
+========================= */
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; /* Increased gap for larger image */
+    text-decoration: none;
+}
+
+/* ENLARGED profile picture - NO BORDER */
+.nav-profile img {
+    width: 95px; /* Increased from 52px */
+    height: 95px; /* Increased from 52px */
+    border-radius: 50%;
+    object-fit: cover;
+    /* REMOVED border: 3px solid var(--accent); */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.nav-name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 75px; /* Match the enlarged image height */
+}
+
+/* Name styling - improved for larger layout */
+.nav-name h2 {
+    font-size: 1.4rem; /* Slightly larger */
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0;
+    line-height: 1.2;
+    margin-bottom: 4px; /* Space between name and tagline */
+    white-space: nowrap;
+}
+
+/* Tagline with dynamic text - UPDATED */
+.nav-tagline {
+    font-size: 1rem; /* Slightly larger */
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+/* Dynamic rotating text styles - UPDATED */
+.rotating-text-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 6px;
+    color: var(--accent); /* Using your accent color */
+    font-weight: 600;
+    font-size: 0.95rem; /* Slightly larger */
+    min-width: 140px; /* Increased for longer text */
+    height: 24px;
+    color: #e63946;
+}
+
+.rotating-text {
+    display: inline-block;
+    min-width: 145px; /* Increased minimum width */
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rotating-text span {
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rotating-text span.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotating-text span.exiting {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+/* Adjust navigation for larger profile picture */
+.navigation {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0; /* Increased padding for taller layout */
+    position: sticky;
+    top: 0;
+    background: var(--bg-main);
+    z-index: 10;
+    min-height: 95px; /* Ensure enough height for the enlarged layout */
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adjust as needed */
+}
+
+/* Adjust content spacing to account for taller nav */
+.max-width-1.m-auto {
+    margin-top: 0.5rem; /* Slight adjustment to maintain spacing */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .nav-profile img {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .nav-name-container {
+        min-height: 65px;
+    }
+    
+    .nav-name h2 {
+        font-size: 1.25rem;
+    }
+    
+    .nav-tagline {
+        font-size: 0.85rem;
+    }
+    
+    .rotating-text-container {
+        min-width: 120px;
+        font-size: 0.85rem;
+    }
+    
+    .navigation {
+        min-height: 85px;
+        padding: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-profile {
+        gap: 0.8rem;
+    }
+    
+    .nav-profile img {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .nav-name-container {
+        min-height: 55px;
+    }
+    
+    .nav-name h2 {
+        font-size: 1.1rem;
+    }
+    
+    .nav-tagline {
+        font-size: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .rotating-text-container {
+        margin-left: 0;
+        margin-top: 2px;
+        min-width: 110px;
+        color: #e63946;
+    }
+    
+    .navigation {
+        min-height: 75px;
+    }
+}
+
+    /* Video section styling */
+    .video-section {
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        margin: 0;
+    }
+
+.video-grid video {
+    width: 100%;
+    height: 300px;          /* ⬅ controls vertical size */
+    object-fit: cover;     /* ⬅ crops tall videos cleanly */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+    @media (max-width: 900px) {
+        .video-grid {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+    }
+
+html {
+    scroll-behavior: smooth;
+}
+
+#featured-projects {
+    scroll-margin-top: 90px;
+}
+
+/* ===== EXPERIENCE HOVER BOX (FORCED VISIBILITY) ===== */
+
+/* ===== EXPERIENCE HOVER BOX ===== */
+
+/* =========================================================
+   EXPERIENCE PANEL — MATCH ABOUT ME EXACTLY
+========================================================= */
+
+.experience-section.experience-box {
+    padding: 2.2rem;
+    background-color: #e6eef4;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
+}
+
+.experience-section.experience-box:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 14px 36px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+/* HARD REMOVE any left accent behavior */
+.experience-section.experience-box::before,
+.experience-section.experience-box::after {
+    content: none !important;
+    display: none !important;
+}
+
+.experience-section.experience-box {
+    border-left: none !important;
+}
+
+
+/* =========================
+   Experience Typography Refinement
+========================= */
+
+/* Justify titles */
+.experience-section h3 {
+    text-align: justify;
+    margin-bottom: 0.6rem;   /* gap below title */
+    line-height: 1.35;
+    color: var(--heading);
+}
+
+/* Add spacing between experience blocks */
+.experience-item:not(:last-child) {
+    margin-bottom: 1.6rem;   /* gap between titles/entries */
+}
+
+/* Justify description text */
+.experience-section p {
+    text-align: justify;
+    margin: 0;
+}
+/* =========================
+   About Me Hover Panel
+========================= */
+
+/* About text only hover panel */
+/* About text only hover panel */
+.about-text-panel {
+    padding: 2.2rem;
+    background-color: #e6eef4; /* soft blue-gray, matches your theme */
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
+}
+
+.about-text-panel:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 14px 36px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+
+.about-text-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    bottom: 16px;
+    width: 4px;
+    background: transparent;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.about-text-panel:hover::before {
+    background: var(--heading);
+}
+
+/* === HARD OVERRIDE: remove any left accent from About panel === */
+.about-text-panel::before,
+.about-text-panel::after {
+    content: none !important;
+    display: none !important;
+}
+
+.about-text-panel {
+    border-left: none !important;
+}
+/* === Skills hover panel (identical to About) === */
+.skills-text-panel {
+    padding: 2.2rem;
+    background-color: #e6eef4; /* same default as About */
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
+}
+
+.skills-text-panel:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 14px 36px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Safety: prevent any accent bars */
+.skills-text-panel::before,
+.skills-text-panel::after {
+    content: none !important;
+    display: none !important;
+}
+/* Force skills panel to match About panel width */
+.skills-text-panel {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ===== Section Titles with Accent Underline ===== */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.4rem;
+    color: var(--heading);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 48px;
+    height: 3px;
+    background-color: var(--accent); /* red */
+    border-radius: 2px;
+}
+/* ===== Skills + Education Row ===== */
+.skills-education-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+/* Education panel uses SAME hover style */
+.education-text-panel {
+    padding: 2.2rem;
+    background-color: #e6eef4;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
+}
+
+.education-text-panel:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 14px 36px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Safety: no accent bars */
+.education-text-panel::before,
+.education-text-panel::after {
+    content: none !important;
+}
+/* =========================================================
+   FINAL ABOUT / SKILLS / EDUCATION LAYOUT + HOVER PANELS
+   Drop-in override (append at END of style2.css)
+========================================================= */
+
+/* ---------- About section grid ---------- */
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+/* Left column takes 2/3 width */
+.about-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Right column takes 1/3 width */
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This aligns top and bottom */
+}
+
+.about-image {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-grow: 1; /* Allow image container to grow */
+}
+
+/* Image stays independent */
+.about-image img {
+    width: auto; /* Allow natural width */
+    max-width: 480px; /* Increased size - adjust as needed */
+    max-height: 320px; /* Maintain aspect ratio */
+    display: block;
+    margin: 0;
+}
+
+/* Mobile fallback */
+@media (max-width: 900px) {
+    .about-left,
+    .about-right {
+        flex: 100%;
+    }
+    
+    .about-right {
+        order: 2; /* Move right column below on mobile */
+    }
+}
+
+/* ---------- Unified hover panel styling ---------- */
+.about-text-panel,
+.skills-text-panel,
+.education-text-panel {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 2.2rem;
+    background-color: #e6eef4;   /* matches site palette */
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    flex: 1; /* Both take equal available space */
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
+}
+
+.about-text-panel:hover,
+.skills-text-panel:hover,
+.education-text-panel:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 14px 36px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ---------- HARD REMOVE any left bars / accents ---------- */
+.about-text-panel::before,
+.about-text-panel::after,
+.skills-text-panel::before,
+.skills-text-panel::after,
+.education-text-panel::before,
+.education-text-panel::after {
+    content: none !important;
+    display: none !important;
+}
+
+.about-text-panel,
+.skills-text-panel,
+.education-text-panel {
+    border-left: none !important;
+}
+
+/* ---------- Section titles (About, Skills, Education, Experience) ---------- */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.4rem;
+    color: var(--heading);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 48px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* ---------- Education typography ---------- */
+.education-text-panel p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.edu-dates {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- Experience section refinements ---------- */
+.experience-section.experience-box {
+    background-color: #e6eef4;
+}
+
+.experience-section h3 {
+    text-align: justify;
+    margin-bottom: 0.6rem;
+    color: var(--heading);
+}
+
+.experience-section p {
+    text-align: justify;
+}
+
+.experience-item:not(:last-child) {
+    margin-bottom: 1.6rem;
+}
+/* =========================================================
+   FORCE Skills + Education to Align Bottom Edges
+========================================================= */
+
+.skills-education-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    /* KEY FIX */
+    align-items: stretch;
+}
+
+/* Force both panels to fill grid cell height */
+.skills-text-panel,
+.education-text-panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Optional: keeps content nicely spaced if one side is shorter */
+.education-text-panel p:last-child,
+.skills-text-panel ul:last-child {
+    margin-bottom: 0;
+}
+/* =========================
+   Education panel vertical offset
+========================= */
+.education-text-panel {
+    margin-top: 2.5rem;   /* subtle downward shift */
+}
+/* =========================================================
+   FORCE RIGHT IMAGE (VENN) TO ACTUALLY SCALE
+   Drop-in override – MUST be at end of CSS
+========================================================= */
+
+/* Allow grid column to not clip */
+/* =========================
+   FORCE RIGHT IMAGE TO SCALE
+========================= */
+
+.content {
+    overflow: visible;
+}
+
+.content-right {
+    align-items: flex-start;
+    overflow: visible;
+    position: relative;
+}
+
+.content-right img {
+    width: auto !important;
+    max-width: none !important;
+    height: auto;
+    transform: scale(1.45);
+    transform-origin: top center;
+    margin-top: -120px;
+    margin-right: -140px;
+}
+
+/* Offset anchor scroll for sticky navbar */
+#skills {
+    scroll-margin-top: 120px;
+}
+
+.contact-panel {
+    padding: 2.2rem;
+    background-color: #e6eef4;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
+}
+
+.contact-panel:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 14px 36px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+.contact-panel p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.contact-panel i {
+    margin-right: 0.6rem;
+    color: var(--accent);
+}
+/* =========================
+   Blog Section
+========================= */
+
+.blog-section {
+    background-color: transparent;
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Individual blog item */
+.blog-item {
+    display: block;
+    padding: 1.2rem 1.6rem;
+
+    background-color: #e6eef4;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    text-decoration: none;
+    color: var(--heading);
+    font-weight: 500;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+.blog-item:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 12px 30px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Optional: subtle arrow cue */
+.blog-item::after {
+    content: "→";
+    float: right;
+    color: var(--accent);
+}
+/* =========================
+   Experience Dropdown Section
+========================= */
+
+.experience-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+/* Individual experience card */
+.experience-item-box {
+    background-color: #e6eef4;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.25s ease;
+}
+
+.experience-item-box:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 14px 36px rgba(70, 63, 58, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Header (clickable) */
+.experience-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.4rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--heading);
+
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Dates */
+.exp-dates {
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+}
+
+/* Chevron */
+.experience-header i {
+    transition: transform 0.3s ease;
+    color: var(--accent);
+}
+
+/* Content (collapsed by default) */
+/* ===== Experience hover expand behavior ===== */
+
+/* Hidden by default */
+.experience-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+}
+
+/* Expand on hover */
+.experience-item-box:hover .experience-content {
+    max-height: 1000px; /* large enough for any description */
+}
+
+/* Chevron animation */
+.experience-item-box .fa-chevron-down {
+    transition: transform 0.35s ease;
+}
+
+/* Rotate chevron on hover */
+.experience-item-box:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* ===== Experience item spacing refinement ===== */
+
+.experience-item-box {
+    padding: 1.8rem 2rem;          /* space between box edge and content */
+}
+
+/* Header spacing */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;         /* space before description appears */
+}
+
+/* Title spacing */
+.experience-header h3 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Description spacing */
+.experience-content {
+    padding-top: 0.8rem;           /* gap between header and description */
+}
+
+/* Paragraph spacing inside description */
+.experience-content p {
+    margin-top: 0.6rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+.experience-content {
+    color: var(--text-secondary);
+    font-size: 0.97rem;
+}
+/* ===== Normalize Experience Heading Font ===== */
+
+.experience-header h3,
+.experience-item h3 {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;          /* matches About / Skills weight */
+    letter-spacing: 0;
+}
+.experience-section .font1 {
+    font-family: inherit !important;
+}
+/* ===== About header: push icons to right edge ===== */
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* KEY LINE */
+    gap: 1rem;
+}
+
+/* Prevent title from shrinking */
+.about-header h1 {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* Keep icons grouped neatly on the right */
+.about-icons {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+/* ===== Match Experience title font to Blog title font ===== */
+
+.experience-item h3 {
+    font-family: inherit;              /* same font stack */
+    font-size: 1.05rem;                /* match visual scale */
+    font-weight: 600;                  /* same weight as blog titles */
+    color: var(--heading);
+    line-height: 1.45;
+    margin-bottom: 0.8rem;
+}

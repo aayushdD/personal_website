@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Flood Early Warning System Using IoT, LoRa, and Machine Learning</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Page-specific: center single video only */
+.video-grid.single-video {
+    grid-template-columns: 1fr;   /* collapse grid */
+    justify-items: center;        /* center content */
+}
+
+.video-grid.single-video video {
+    width: 50%; 
+    height: 110%                  /* control video width */
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal</h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+    <div class="video-grid single-video">
+        <!-- Video 1 -->
+<img src="img/transmitter.jpg" alt="article">
+    </div>
+</div>
+
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+
+ <h1 class="font1">
+    Flood Early Warning System Using IoT, LoRa, and Machine Learning
+</h1>
+
+<div class="blogpost-meta">
+    <div class="author-info">
+        <div><B>Mechanical and machine learning lead:</B> Aayush Dulal</div>
+        <div>Robotics Systems • IoT • Machine Learning • Disaster Risk Reduction</div>
+    </div>
+</div>
+
+<p class="font1">
+    This work presents the design, deployment, and field validation of an Artificial Intelligence based Flood Early Warning System developed for the Terai region of Nepal, with a focus on the Kamala River basin in Siraha district. The system addresses the limitations of traditional flood warning mechanisms by integrating real-time sensing, long-range wireless communication, and machine learning based prediction to provide actionable early warnings to vulnerable communities.
+</p>
+
+<p class="font1">
+    From a systems and robotics perspective, the project is structured as a distributed cyber-physical system composed of sensor nodes, communication repeaters, a central processing unit, and human-facing alert interfaces. The deployment consists of a transmitter station at Bhokaraha, two intermediate repeater stations, and a receiver station at Basbitta, collectively covering a line-of-sight distance exceeding 16 kilometers using LoRa wireless communication. This architecture enables reliable data transmission in geographically challenging and infrastructure-limited environments.
+    Each transmitter station is equipped with a microcontroller-based embedded system responsible for data acquisition, local processing, and communication. Sensors include an ultrasonic water-level sensor, a rain gauge, and temperature-humidity sensors, enabling continuous environmental monitoring. The system is designed for autonomous operation using solar power and battery backups, ensuring uninterrupted functionality during adverse weather and power outages.
+</p>
+
+<p class="font1">
+    Communication between stations is achieved using LoRa technology operating at 433 MHz, selected for its low power consumption, long-range capability, and resilience to interference. To maintain secure data transmission, encrypted packets are transmitted between nodes, and repeater stations forward messages to extend coverage without requiring centralized infrastructure. This communication layer enables real-time data flow from upstream river locations to downstream communities at risk. 
+    At the core of the system is a machine learning based prediction model trained on historical hydrological and meteorological data obtained from the Department of Hydrology and Meteorology of Nepal. The dataset includes precipitation, temperature, and river water level measurements collected over multiple years. Extensive preprocessing and feature engineering are performed, including seasonal trend analysis, lag-based features, and statistical descriptors to capture the temporal dynamics of river behavior.
+</p>
+
+<p class="font1">
+    Multiple forecasting approaches are evaluated, including classical time-series models such as ARIMA and SARIMA. However, a linear regression based machine learning model with engineered features demonstrates superior performance for this application. The final model achieves a coefficient of determination (R²) of 0.94 and a mean absolute error of approximately 6 centimeters, enabling reliable prediction of rising water levels and flood conditions approximately one hour in advance. 
+    The receiver station serves as the system’s decision and alert hub. It integrates an embedded microcontroller with a Raspberry Pi for higher-level processing, cloud connectivity, and visualization. A multi-channel alert mechanism is implemented, including a 7-inch LCD display for real-time data visualization, a high-power audible siren for immediate community alerts, and a web-based dashboard for remote monitoring. These interfaces ensure that predictions generated by the AI model are translated into timely and understandable warnings for local populations. 
+</p>
+
+<p class="font1">
+    Field testing and validation are conducted across multiple river sites, confirming robust communication performance, reliable sensor operation, and accurate prediction under real-world conditions. The system demonstrates stable operation with multi-day power autonomy, effective signal propagation through repeater stations, and consistent early warning delivery during rising water events. The deployment directly supports community preparedness and evacuation planning, aligning with international disaster risk reduction frameworks.
+    This project demonstrates how low-cost robotics, embedded systems, and machine learning can be integrated into scalable disaster mitigation infrastructure for developing regions. By combining sensing, communication, prediction, and human-centered alerting into a unified system, the work establishes a replicable model for AI-driven early warning systems capable of reducing loss of life and improving resilience in flood-prone environments. 
+</p>
+
+<div class="article-footer">
+    <p>
+        <strong>Key Skills Demonstrated</strong>:
+        Distributed Robotic Systems,
+        Embedded Systems Design,
+        LoRa Communication,
+        Machine Learning for Time Series Prediction,
+        IoT Sensor Networks,
+        Real-World System Deployment
+    </p>
+</div>
+
+
+
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+</body>
+</html>

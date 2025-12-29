@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Imitation Initialized Reinforcement Learning for Robotic Manipulation</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal</h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/experience.html">Experience</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+    <div class="video-grid">
+
+        <!-- Video 1 -->
+        <video autoplay loop muted playsinline>
+            <source src="img/demo_pick_red.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Video 2 -->
+        <video autoplay loop muted playsinline>
+            <source src="img/demo_pick_green.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Video 3 -->
+        <video autoplay loop muted playsinline>
+            <source src="img/demo_only_red.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+    </div>
+</div>
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+
+    <h1 class="font1">
+        Imitation Initialized Reinforcement Learning for Real World Robot Manipulation
+    </h1>
+
+    <div class="blogpost-meta">
+        <div class="author-info">
+            <div>Aayush Dulal</div>
+            <div>Learning Based Robotics • Real Hardware Deployment</div>
+        </div>
+    </div>
+
+    <p class="font1">
+        This project presents a practical learning based manipulation pipeline implemented on the SO 101 robotic arm using a hybrid imitation learning and reinforcement learning approach. The system enables language conditioned pick and place behavior on real hardware under limited data and noisy actuation.
+    </p>
+
+    <p class="font1">
+        A compact Vision Language Action model is first trained via imitation learning from real world demonstrations to provide safe, task relevant behavior. This policy is then used to initialize reinforcement learning, allowing the robot to improve robustness and task success through interaction.
+    </p>
+
+    <p class="font1">
+        By constraining reinforcement learning exploration around expert like actions, the system avoids unsafe behavior while learning recovery strategies, correcting for hardware imperfections, and adapting to perception noise. The final policy demonstrates improved grasp stability and reliable execution on low cost robotic hardware. The imitation learning is done by fine tuning the huggingface's SMOLVLA model. This is done by recording 90 episodes to imitate. The SMOLVLA is intended to run with a top down camera and the camera attached to the end-effector. In this version, only the end-effector attached camera is used because of which the input state of the robot changes with every frame and there is no stable top-down camera for the robot to rely on. Therefore, the motion shows jitters and has success rate of only seven out of ten attempts. 
+    </p>
+
+    <div class="article-footer">
+        <p>
+            <strong>Key Skills Demonstrated</strong>:
+            Reinforcement Learning,
+            Imitation Learning,
+            Robot Manipulation,
+            Vision Language Action Models,
+            Real World Deployment
+        </p>
+    </div>
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+<div class="footer">
+    <p>© aayushdulal.com.np</p>
+</div>
+
+</body>
+</html>
