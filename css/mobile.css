@@ -1,63 +1,670 @@
-@media screen and (max-width: 1200px) {
-  .navigation {
-    flex-direction: column;
-    margin-bottom: 23px;
-  }
+/* mobile.css - Mobile Responsive Styles */
 
-  .nav-left {
-    flex-direction: column;
-    text-align: center;
-  }
+/* ============================================
+   BASE MOBILE STYLES (Apply to all screens)
+   These are small adjustments that help mobile
+   ============================================ */
+* {
+    box-sizing: border-box;
+}
 
-  .content-right {
-    display: none;
-  }
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
 
-  .home-article {
-    flex-direction: column;
-  }
-
-  .home-article-img {
-    text-align: center;
-  }
-
-  .year-box {
-    top: 25px;
-    left: 60vw;
-    font-size: 11px;
-    display: flex;
-  }
-
-  .year-box div {
-    padding: 0 3px;
-    margin: 0;
-  }
-
-  .home-article img {
-    width: 70vw;
-  }
-  .form-input {
-    width: 50%;
-  }
-  .form-box input,
-  textarea {
-    width: 66vw;
-  }
-  .row {
-    flex-direction: column;
-  }
-  .social {
-    padding: 0;
-  }
-  .post-img {
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
     height: auto;
-  }
-  .adjust-year {
-    position: static;
-    height: auto;
-    padding: 12px 0px;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-  }
+}
+
+/* ============================================
+   MOBILE-ONLY STYLES (Apply only ≤ 768px)
+   ============================================ */
+
+/* Navigation - Mobile Only */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        padding: 10px 5px;
+        position: relative;
+    }
+    
+    .nav-left {
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .nav-right {
+        width: 100%;
+        position: relative;
+    }
+    
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        padding: 12px;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+    }
+    
+    .nav-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .nav-profile img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    
+    .nav-name-container {
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .nav-name h2 {
+        font-size: 20px;
+        margin: 0 0 5px 0;
+    }
+    
+    .nav-tagline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        gap: 5px;
+    }
+    
+    .rotating-text-container {
+        display: inline-block;
+        height: 24px;
+        overflow: hidden;
+        vertical-align: middle;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .rotating-text {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .rotating-text span {
+        display: block;
+        height: 24px;
+        font-weight: bold;
+        color: #007bff;
+    }
+    
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1001;
+        background: none;
+        border: none;
+    }
+    
+    /* Hide desktop-specific elements if any */
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* About Section - Mobile Only */
+@media (max-width: 768px) {
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .about-left, .about-right {
+        width: 100%;
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .about-text-panel, .skills-text-panel, .education-text-panel {
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .about-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .about-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .about-icons a {
+        color: #333;
+        font-size: 20px;
+        transition: color 0.3s;
+    }
+    
+    .about-icons a:hover {
+        color: #007bff;
+    }
+}
+
+/* Skills Section - Mobile Only */
+@media (max-width: 768px) {
+    .skills-text-panel ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+    
+    .skills-text-panel li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+/* Education Section - Mobile Only */
+@media (max-width: 768px) {
+    .education-text-panel p {
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+    
+    .edu-dates {
+        display: block;
+        color: #666;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+}
+
+/* Experience Section - Mobile Only */
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 15px;
+    }
+    
+    .experience-item-box {
+        padding: 15px;
+        margin-bottom: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #007bff;
+    }
+    
+    .experience-item-box h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #333;
+        line-height: 1.3;
+    }
+    
+    .experience-content p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #555;
+        margin: 0;
+    }
+}
+
+/* Projects Section - Mobile Only */
+@media (max-width: 768px) {
+    .home-articles {
+        padding: 15px;
+    }
+    
+    .home-article {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s;
+    }
+    
+    .home-article:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .home-article-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+    
+    .home-article-img img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+    
+    .home-article:hover .home-article-img img {
+        transform: scale(1.05);
+    }
+    
+    .home-article-content {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .home-article-content a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .home-article-content h3 {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+        color: #333;
+    }
+    
+    .home-article-content div {
+        font-size: 13px;
+        color: #666;
+        font-family: monospace;
+        padding: 4px 8px;
+        background: #e9ecef;
+        border-radius: 4px;
+        display: inline-block;
+    }
+}
+
+/* Blog/Articles Section - Mobile Only */
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 15px;
+    }
+    
+    .blog-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .blog-item {
+        display: block;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #333;
+        font-size: 15px;
+        transition: all 0.3s;
+        border-left: 4px solid #007bff;
+    }
+    
+    .blog-item:hover {
+        background: #e9ecef;
+        transform: translateX(5px);
+    }
+}
+
+/* Contact Section - Mobile Only */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+    
+    .contact-panel h2 {
+        margin-bottom: 20px;
+    }
+    
+    .contact-panel p {
+        font-size: 15px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #555;
+    }
+    
+    .contact-panel a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    .contact-panel a:hover {
+        text-decoration: underline;
+    }
+    
+    .contact-panel i {
+        color: #007bff;
+        width: 20px;
+    }
+}
+
+/* ============================================
+   DIFFERENT SCREEN SIZE VARIANTS
+   ============================================ */
+
+/* Very Small Phones (320px - 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .nav-name h2 {
+        font-size: 18px;
+    }
+    
+    .nav-tagline {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .about-icons {
+        gap: 12px;
+    }
+    
+    .about-icons a {
+        font-size: 18px;
+    }
+    
+    .skills-text-panel li,
+    .education-text-panel p,
+    .experience-content p {
+        font-size: 13px;
+    }
+    
+    .home-article-content h3 {
+        font-size: 16px;
+    }
+    
+    .home-article-content div {
+        font-size: 12px;
+    }
+    
+    .blog-item {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .contact-panel p {
+        font-size: 14px;
+    }
+}
+
+/* Small Phones to Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .about-grid {
+        padding: 20px;
+    }
+    
+    .home-articles {
+        padding: 20px;
+    }
+    
+    .blog-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .experience-section {
+        padding: 20px;
+    }
+}
+
+/* Tablet Portrait (769px - 1024px) - Override some mobile styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Show nav links normally (undo mobile hide) */
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+    }
+    
+    /* Hide hamburger menu */
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    /* Restore some desktop layouts */
+    .about-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        max-width: 768px;
+        margin: 0 auto;
+    }
+    
+    .home-article {
+        flex-direction: row;
+    }
+    
+    .home-article-img {
+        width: 40%;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    
+    .home-article-content {
+        width: 60%;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+/* ============================================
+   SPECIAL CASES
+   ============================================ */
+
+/* Landscape Mode Adjustments */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 768px) {
+    .navigation {
+        flex-direction: row;
+        padding: 5px;
+        align-items: center;
+    }
+    
+    .nav-left {
+        width: auto;
+        margin-bottom: 0;
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .nav-profile {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .nav-profile img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+    }
+    
+    .nav-name-container {
+        text-align: left;
+    }
+    
+    .nav-right {
+        width: auto;
+    }
+    
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+    
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    .nav-links {
+        display: flex !important;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+    }
+}
+
+/* Performance Optimizations for Mobile Only */
+@media (max-width: 768px) {
+    /* Reduce animations on mobile */
+    * {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.3s !important;
+    }
+    
+    /* Improve touch targets */
+    a, button, .nav-links li {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Prevent text overflow */
+    h1, h2, h3, h4, p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+/* Fix for iOS Safari - Mobile Only */
+@media (max-width: 768px) {
+    @supports (-webkit-touch-callout: none) {
+        .home-article-img img {
+            height: auto;
+            max-height: 200px;
+        }
+        
+        /* Prevent text size adjustment */
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+    }
+}
+
+/* Print styles */
+@media print {
+    .mobile-menu-toggle,
+    .about-icons,
+    .nav-links {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        padding: 0;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+    
+    .home-article {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES (for all screens)
+   These help with mobile but work everywhere
+   ============================================ */
+
+/* Make sure containers don't overflow on mobile */
+@media (max-width: 768px) {
+    .max-width-1 {
+        max-width: 100%;
+    }
+}
+
+/* Center elements */
+.m-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive margins */
+.my-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .my-2 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Responsive horizontal rule */
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+    hr {
+        margin: 10px 0;
+    }
 }
