@@ -564,6 +564,20 @@ img {
         box-shadow: none;
         background: transparent;
     }
+    /* Optional: Mobile dropdown look */
+    .nav-links {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /* Optional: Smooth animation */
+    .nav-links {
+        transition: all 0.3s ease;
+    }
+
 }
 
 /* Performance Optimizations for Mobile Only */

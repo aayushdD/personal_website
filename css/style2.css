@@ -1343,3 +1343,7 @@ html {
     line-height: 1.45;
     margin-bottom: 0.8rem;
 }
+/* Hide hamburger menu by default (desktop) */
+.mobile-menu-toggle {
+    display: none;
+}
