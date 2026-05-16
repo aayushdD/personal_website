@@ -927,7 +927,7 @@ html {
 .about-image img {
     width: auto; /* Allow natural width */
     max-width: 480px; /* Increased size - adjust as needed */
-    max-height: 320px; /* Maintain aspect ratio */
+    max-height: 350px; /* Maintain aspect ratio */
     display: block;
     margin: 0;
 }
