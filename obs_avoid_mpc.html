@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/blogpost.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+    <title>Imitation Initialized Reinforcement Learning for Robotic Manipulation</title>
+
+    <style>
+        /* Video grid styling */
+        .video-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navigation max-width-1 m-auto">
+    <div class="nav-left">
+        <a href="/" class="nav-profile">
+            <img src="img/face.png" alt="Profile Picture of Aayush Dulal">
+            <div class="nav-name-container">
+                <div class="nav-name">
+                    <h2>Aayush Dulal </h2>
+                </div>
+                <div class="nav-tagline">
+                    Robotics • Control • Machine Learning
+                </div>
+                <div class="about-header">
+                <h1 class="section-title">About me</h1>
+                
+            </div>
+            </div>
+        </a>
+    </div>
+<div class="nav-right">
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#featured-projects">Projects</a></li>
+        <li><a href="index.html#experience">Experiences</a></li>      
+        <li><a href="index.html#articles">Articles</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+</div>
+</nav>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+
+<!-- Demo videos section -->
+<div class="video-section max-width-1 m-auto">
+
+        <!-- Video 1 -->
+    <div class="video-section max-width-1 m-auto">
+
+    <img class="gif-img" src="img/two_obstacle_circular_mpc2.gif" alt="article">
+
+    <img class="gif-img2" src="img/mpc_animation2.gif" alt="article">
+
+</div>
+</div>
+
+<div class="pdf-link-section">
+    <a href="Opt_control_course_final_report.pdf" target="_blank" class="pdf-button">
+        View Full Technical Report (PDF)
+    </a>
+    </div>
+
+<!-- Project description -->
+<div class="m-auto blog-post-content max-width-2 m-auto my-2">
+    <h1 class="font1">
+         MPC based obstacle avoidance with uncertainty in the auto-pilot dynamics and the obstacle 
+    </h1>
+
+    <div class="blogpost-meta">
+        <div class="author-info">
+            <div>Aayush Dulal</div>
+            <div>Model Predictive Controller • Dynamic Programming and Optimal Control</div>
+            <div class="about-icons">
+                    <a href="https://github.com/aayushdD/so101_Imitation_learning/tree/master" target="_blank"><i class="fab fa-github"></i></a>
+                    <b>Code</b>
+                </div>
+        </div>
+    </div>
+
+
+<p class="font1">
+This project investigates autonomous vehicle trajectory planning in dynamic environments using <b>Model Predictive Control (MPC)</b> under motion uncertainty. The work is motivated by the fact that real world obstacle avoidance problems are fundamentally difficult optimal control problems. In theory, the globally optimal solution can be obtained through <b>Dynamic Programming (DP)</b>, where the control policy is computed over the entire state space while accounting for future disturbances and constraints. However, once moving obstacles, nonlinear constraints, and uncertainty are introduced, the optimization rapidly becomes computationally intractable for real time applications. To address this challenge, the project reformulates the problem using <b>receding horizon MPC</b>, which computes a locally optimal approximation of the full optimal control solution online at every time step.
+</p>
+
+<p class="font1">
+    The environment consists of an autonomous vehicle navigating a multi lane road populated with <b>multiple moving obstacle vehicles</b>. Unlike simplified deterministic obstacle avoidance methods, the project explicitly models uncertainty in both the obstacle predictions and the ego vehicle dynamics. Sensor noise, imperfect motion prediction, actuator disturbances, and delayed state estimation introduce randomness into the system, making exact future trajectories impossible to know in advance. Instead of assuming precise obstacle locations, each obstacle vehicle is represented probabilistically using a Gaussian position distribution whose covariance evolves over time. This allows the controller to reason not only about where an obstacle is expected to be, but also about the confidence of that prediction.
+</p>
+
+<p class="font1">
+    To safely navigate through uncertainty, the project leverages the <b>Mahalanobis distance</b> as a probabilistic safety metric. Rather than avoiding only the mean obstacle position, the controller avoids an uncertainty ellipse generated from the obstacle covariance distribution. These ellipsoidal safety regions expand naturally as prediction uncertainty increases, creating dynamically changing no go regions inside the optimization problem. This formulation enables the MPC controller to generate trajectories that remain robust even when obstacle motion becomes unpredictable or stochastic.
+</p>
+
+<p class="font1">
+    The optimization problem additionally enforces strict <b>road boundary constraints</b> so that all generated trajectories remain inside the drivable corridor. The vehicle cannot simply leave the roadway to avoid collisions, which makes the feasible space highly constrained and non convex. Lane structure and roadway geometry are embedded directly into the MPC constraints, forcing the optimizer to balance collision avoidance, smooth tracking performance, and control effort simultaneously. Furthermore, overtaking behavior is intentionally constrained so that the autonomous vehicle performs passing maneuvers strictly from the <b>left side</b>, closely mimicking realistic highway driving rules and structured traffic behavior.
+</p>
+
+<p class="font1">
+    The resulting MPC problem is solved repeatedly online over a finite prediction horizon using the current estimated system state. At every iteration, the optimizer predicts future robot motion, predicts future obstacle distributions, evaluates safety constraints, and computes an optimal control sequence consisting of steering and acceleration actions. Only the first control input is applied before the optimization is solved again at the next time step. This receding horizon strategy allows the controller to continuously adapt to evolving obstacle behavior and environmental uncertainty while remaining computationally feasible for real time deployment.
+</p>
+
+<p class="font1">
+    Simulation results demonstrate smooth and collision free overtaking trajectories in the presence of several moving vehicles with stochastic motion. The controller successfully maintains safe probabilistic separation distances, respects road constraints, and performs structured left side overtaking even under uncertainty in both the ego vehicle and surrounding traffic. Overall, the project highlights how <b>Optimal Control Theory</b>, <b>Dynamic Programming approximations</b>, <b>Probabilistic Motion Prediction</b>, and <b>Constrained Nonlinear MPC</b> can be combined to create robust autonomous driving behavior in complex and uncertain traffic environments.
+</p>
+
+    <div class="article-footer">
+        <p>
+            <strong>Key Skills Demonstrated</strong>:
+             Model Predictive Control Law,
+             Approximate Dynamic Programming,
+            MATLAB Programming
+        </p>
+    </div>
+
+</div>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+
+<div class="footer">
+    <p>© aayushdulal.com.np</p>
+</div>
+
+</body>
+</html>
